@@ -9,7 +9,7 @@
   </head>
 
     <body>
-  <section class="section">
+  <section class="hero is-primary is-bold section">
     <div class="container">
       <h1 class="title">
         Task App
@@ -17,6 +17,7 @@
       <p class="subtitle">
         A little tool to keep track of a task list
       </p>
+      <a href="{{ route('homePage') }}" class="button is-inverted">Go Back</a>
     </div>
   </section>
 
