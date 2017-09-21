@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Post;
 
 class TasksController extends Controller
 {
@@ -12,4 +13,26 @@ class TasksController extends Controller
 
     	return view('todo', compact('tasks'));
     }
+
+    public function create()
+    {
+    	return view('make');
+    }
+
+    public function store()
+    {
+    	$post = new Post;
+
+    	$post->body = request('body');
+
+    	$post->save();
+
+    	return redirect('/');
+    }
 }
+
+
+
+
+
+
