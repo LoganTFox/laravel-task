@@ -23,7 +23,7 @@
 
 <section class="section">
     <form method="POST" action="/posts">
-
+      <input type="hidden" name="_token" value="{{ csrf_token() }}">
       <div class="field">
         <label class="label">Task</label>
         <div class="control">

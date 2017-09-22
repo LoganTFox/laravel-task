@@ -23,9 +23,11 @@
 		  <div class="hero-body">
 		    <div class="container">
 		    	<ul>
-					@foreach ($tasks as $task)
+					<hr>
+		    		@foreach ($tasks as $task) 
 						<li>{{ $task->body }}</li>
-					@endforeach
+						<hr>
+				    @endforeach	
 				</ul>
 		    </div>
 		  </div>

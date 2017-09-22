@@ -4,14 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
+use App\Task;
 
 class TasksController extends Controller
 {
     public function index()
     {
-    	$tasks = \DB::table('tasks')->get();
+    	$tasks = \App\Task::all();
 
-    	return view('todo', compact('tasks'));
+		return view('todo', compact('tasks'));
     }
 
     public function create()
@@ -19,15 +20,20 @@ class TasksController extends Controller
     	return view('make');
     }
 
-    public function store()
+    public function store(Request $request)
     {
-    	$post = new Post;
+    	$task = new Task;
 
-    	$post->body = request('body');
+    	$task->body = $request->body;
 
-    	$post->save();
+    	$task->save();
 
-    	return redirect('/');
+    	return redirect()->route('homePage');
+    }
+
+    public function edit()
+    {
+    	
     }
 }
 
