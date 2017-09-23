@@ -25,8 +25,8 @@
 		    	<ul>
 					<hr>
 		    		@foreach ($tasks as $task) 
-						<li><a href="/tasks/{{ $task->id }}">{{ $task->body }}</a></li>
-						<hr>
+  						<li><a href="/tasks/{{ $task->id }}">{{ $task->body }}</a></li>
+  						<hr>
 				    @endforeach	
 				</ul>
 		    </div>

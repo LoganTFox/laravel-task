@@ -38,9 +38,9 @@ class TasksController extends Controller
         return view('tasks.task', compact('tasks'));
     }
 
-    public function edit()
+    public function edit(\App\Task $task)
     {
-    	return view('tasks.edit');
+    	return view('tasks.edit', compact('task'));
     }
 }
 
