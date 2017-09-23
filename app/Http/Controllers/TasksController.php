@@ -12,12 +12,12 @@ class TasksController extends Controller
     {
     	$tasks = \App\Task::all();
 
-		return view('todo', compact('tasks'));
+		return view('index', compact('tasks'));
     }
 
     public function create()
     {
-    	return view('make');
+    	return view('tasks.make');
     }
 
     public function store(Request $request)
@@ -31,9 +31,16 @@ class TasksController extends Controller
     	return redirect()->route('homePage');
     }
 
+    public function show($id)
+    {
+        $tasks = \App\Task::find($id);
+
+        return view('tasks.task', compact('tasks'));
+    }
+
     public function edit()
     {
-    	
+    	return view('tasks.edit');
     }
 }
 
