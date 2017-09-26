@@ -42,6 +42,26 @@ class TasksController extends Controller
     {
     	return view('tasks.edit', compact('task'));
     }
+
+    public function update(Request $request, $id)
+    {
+        $tasks = \App\Task::find($id);
+
+        $tasks->body = $request->body;
+
+        $tasks->save();
+
+        return redirect(route('homePage'));
+    }
+
+    public function delete($id)
+    {
+        $task = Task::find($id);
+
+        $task->delete();
+
+        return redirect(route('homePage'));
+    }
 }
 
 

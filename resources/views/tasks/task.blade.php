@@ -18,7 +18,13 @@
       </p>
       <a href="{{ route('tasks.make') }}" class="button is-inverted">Add Task</a>
       <a href="{{ route('homePage') }}" class="button is-inverted">Go Back</a>
-      <a href="" class="button is-inverted">Edit Task</a>
+      <a href="{{ url('tasks/'.$tasks->id.'/edit') }}" class="button is-inverted">Edit Task</a>
+      <form action="{{ url('tasks/'.$tasks->id) }}" method="POST">
+        {{ csrf_field() }}
+        {{ method_field('DELETE') }}
+        <button type="submit" class="button is-inverted" style="margin-top: 10px;">Delete Task</button>
+      </form>
+
     </div>
   </section>
 

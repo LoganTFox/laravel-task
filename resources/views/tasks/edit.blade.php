@@ -22,8 +22,9 @@
   </section>
 
 <section class="section">
-    <form method="POST" action="/tasks">
+    <form method="POST" action="{{ route('tasksUpdate', $task->id) }}">
       <input type="hidden" name="_token" value="{{ csrf_token() }}">
+      <input name="_method" type="hidden" value="PATCH">
       <div class="field">
         <label class="label">Make Edit</label>
         <div class="control">
